@@ -374,6 +374,38 @@ address { font-style: normal; }
 .menu-note { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.08em; text-align: center; font-style: italic; }
 
 /* ═══════════════════════════════════════════════════
+   THE SPACE
+═══════════════════════════════════════════════════ */
+.space-section { background: var(--ink); overflow: hidden; }
+.space-inner {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  min-height: 600px;
+}
+.space-image { position: relative; overflow: hidden; }
+.space-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center center;
+  filter: saturate(0.7) brightness(0.9);
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+.space-image:hover img { transform: scale(1.04); filter: saturate(0.85) brightness(0.95); }
+.space-text {
+  background: var(--ink-mid);
+  padding: clamp(3.5rem, 7vw, 7rem) clamp(2.5rem, 5vw, 5rem);
+  display: flex; flex-direction: column; justify-content: center;
+  border-left: 1px solid rgba(201,169,110,0.1);
+}
+.space-text .eyebrow { margin-bottom: 1.25rem; }
+.space-text h2 {
+  font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300; color: var(--cream); line-height: 1.1;
+}
+.space-text p {
+  font-size: 0.95rem; line-height: 1.85; color: var(--text-mid);
+  margin-bottom: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════
    GALLERY
 ═══════════════════════════════════════════════════ */
 .gallery-section { background: var(--ink); padding: clamp(5rem, 10vw, 10rem) 0 0; }
@@ -615,6 +647,8 @@ address { font-style: normal; }
   .brand-inner { grid-template-columns: 1fr; }
   .brand-text { padding-right: 0; margin-bottom: 3rem; }
   .brand-fig { max-width: 600px; }
+  .space-inner { grid-template-columns: 1fr; min-height: auto; }
+  .space-image { height: 420px; }
 
   .courses-grid { grid-template-columns: repeat(2, 1fr); }
   .reviews-grid { grid-template-columns: 1fr; }
